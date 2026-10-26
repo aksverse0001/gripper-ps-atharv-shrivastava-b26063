@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="620" viewBox="0 0 1000 620">
+<rect width="1000" height="620" fill="white"/><style>text{font-family:Arial,sans-serif;fill:#222}.shape{fill:#dfe5ea;stroke:#27313b;stroke-width:3}.wheel{fill:#343a40;stroke:#111;stroke-width:2}.dim{stroke:#bb4a26;stroke-width:2;fill:none}.txt{font-size:18px}.head{font-size:26px;font-weight:bold}</style>
+<text x="40" y="45" class="head">RoboReach chassis — main dimensions (mm)</text>
+<rect x="190" y="180" width="480" height="360" rx="2" class="shape"/>
+<circle cx="260" cy="250" r="48" class="wheel"/><circle cx="600" cy="250" r="48" class="wheel"/><circle cx="260" cy="470" r="48" class="wheel"/><circle cx="600" cy="470" r="48" class="wheel"/>
+<rect x="470" y="300" width="150" height="80" class="shape"/><text x="545" y="335" text-anchor="middle" class="txt">battery</text><text x="545" y="358" text-anchor="middle" class="txt">low + rear</text>
+<path d="M190 145 V110 M670 145 V110 M190 125 H670" class="dim"/><path d="M190 125 l12 -6 M190 125 l12 6 M670 125 l-12 -6 M670 125 l-12 6" class="dim"/><text x="430" y="105" text-anchor="middle" class="txt">240 chassis length</text>
+<path d="M710 180 H750 M710 540 H750 M735 180 V540" class="dim"/><text x="770" y="365" class="txt" transform="rotate(90 770 365)" text-anchor="middle">180 chassis width</text>
+<path d="M260 250 V160 M600 250 V160 M260 165 H600" class="dim"/><text x="430" y="155" text-anchor="middle" class="txt">170 wheelbase</text>
+<path d="M260 520 V575 M600 520 V575 M260 560 H600" class="dim"/><text x="430" y="600" text-anchor="middle" class="txt">150 track width</text>
+<text x="40" y="570" class="txt">4 wheels Ø70 mm in baseline model; consider Ø90 mm for sharp 40 mm steps.</text>
+<text x="40" y="595" class="txt">Cube centre: 70 mm ahead of chassis front edge (shown separately in 3D model).</text></svg>

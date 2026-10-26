@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+<rect width="1200" height="760" fill="#fff"/>
+<style>text{font-family:Arial,sans-serif;fill:#20252b}.box{fill:#f4f6f8;stroke:#303943;stroke-width:2}.power{fill:#fff0e6;stroke:#b64a20;stroke-width:2}.logic{fill:#eaf4ff;stroke:#2867a6;stroke-width:2}.gnd{stroke:#222;stroke-width:3;stroke-dasharray:7 5}.wire{stroke:#bd4c26;stroke-width:3;fill:none}.sig{stroke:#2867a6;stroke-width:2.5;fill:none}.small{font-size:16px}.big{font-size:23px;font-weight:bold}.label{font-size:18px;font-weight:bold}</style>
+<text x="40" y="42" class="big">RoboReach electrical layout (concept, not to scale)</text>
+<rect x="40" y="90" width="180" height="95" rx="8" class="power"/><text x="130" y="124" text-anchor="middle" class="label">3S LiPo</text><text x="130" y="150" text-anchor="middle" class="small">11.1 V nominal</text><text x="130" y="171" text-anchor="middle" class="small">12.6 V full</text>
+<rect x="270" y="90" width="150" height="95" rx="8" class="power"/><text x="345" y="124" text-anchor="middle" class="label">Kill switch</text><text x="345" y="150" text-anchor="middle" class="small">≥20 A DC</text><text x="345" y="171" text-anchor="middle" class="small">shuts all power</text>
+<rect x="465" y="90" width="140" height="95" rx="8" class="power"/><text x="535" y="124" text-anchor="middle" class="label">15 A fuse</text><text x="535" y="151" text-anchor="middle" class="small">near battery +</text>
+<rect x="650" y="90" width="190" height="95" rx="8" class="power"/><text x="745" y="124" text-anchor="middle" class="label">Star + distribution</text><text x="745" y="151" text-anchor="middle" class="small">fused battery rail</text>
+<path d="M220 138 H270 M420 138 H465 M605 138 H650" class="wire"/>
+<rect x="40" y="275" width="220" height="100" rx="8" class="power"/><text x="150" y="310" text-anchor="middle" class="label">H-bridge L</text><text x="150" y="338" text-anchor="middle" class="small">≥10 A continuous</text><text x="150" y="359" text-anchor="middle" class="small">one motor</text>
+<rect x="300" y="275" width="220" height="100" rx="8" class="power"/><text x="410" y="310" text-anchor="middle" class="label">H-bridge R</text><text x="410" y="338" text-anchor="middle" class="small">≥10 A continuous</text><text x="410" y="359" text-anchor="middle" class="small">one motor</text>
+<rect x="40" y="420" width="220" height="70" rx="8" class="box"/><text x="150" y="450" text-anchor="middle" class="label">Left 12 V motor</text><text x="150" y="473" text-anchor="middle" class="small">4 A stall reference</text>
+<rect x="300" y="420" width="220" height="70" rx="8" class="box"/><text x="410" y="450" text-anchor="middle" class="label">Right 12 V motor</text><text x="410" y="473" text-anchor="middle" class="small">4 A stall reference</text>
+<path d="M745 185 V235 H150 V275 M745 235 H410 V275" class="wire"/>
+<path d="M150 375 V420 M410 375 V420" class="wire"/>
+<rect x="650" y="275" width="190" height="100" rx="8" class="power"/><text x="745" y="310" text-anchor="middle" class="label">6 V buck</text><text x="745" y="337" text-anchor="middle" class="small">≥20 A continuous</text><text x="745" y="359" text-anchor="middle" class="small">servo rail</text>
+<rect x="880" y="275" width="260" height="100" rx="8" class="box"/><text x="1010" y="309" text-anchor="middle" class="label">4 × MG996R + MG90S</text><text x="1010" y="337" text-anchor="middle" class="small">6 V; peak about 10.7 A</text><text x="1010" y="359" text-anchor="middle" class="small">bulk cap near servo bus</text>
+<path d="M745 185 V275 M840 325 H880" class="wire"/>
+<rect x="650" y="430" width="190" height="95" rx="8" class="power"/><text x="745" y="464" text-anchor="middle" class="label">5 V buck</text><text x="745" y="491" text-anchor="middle" class="small">≥3 A</text><text x="745" y="511" text-anchor="middle" class="small">controller rail</text>
+<rect x="880" y="430" width="260" height="95" rx="8" class="logic"/><text x="1010" y="464" text-anchor="middle" class="label">ESP32 DevKit</text><text x="1010" y="491" text-anchor="middle" class="small">VIN = 5 V; GPIO = 3.3 V</text><text x="1010" y="511" text-anchor="middle" class="small">Wi-Fi / Bluetooth control</text>
+<path d="M745 185 V405 H745 V430 M840 478 H880" class="wire"/>
+<path d="M1010 430 V405 H535" class="sig"/><text x="880" y="400" class="small">GPIO PWM + direction signals to drivers/servos</text>
+<path d="M130 185 V625 H1010 V525 M410 490 V625 M745 525 V625 M150 490 V625" class="gnd"/>
+<text x="520" y="660" class="label">Common ground star: battery −, both bucks, both drivers and ESP32</text>
+<text x="40" y="710" class="small">Add 470–1000 µF + 100 nF at each motor driver; 1000–2200 µF on 6 V servo bus; 100 nF at ESP32 input.</text>
+<text x="40" y="735" class="small">Fuse and kill switch must be DC-rated. Exact driver/buck current and thermal ratings must be verified for the purchased modules.</text>
+</svg>
